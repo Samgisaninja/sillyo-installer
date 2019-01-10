@@ -1,0 +1,47 @@
+#!/bin/bash
+rm /etc/apt/sources.list.d/sileo.list 2> /dev/null || true
+touch /etc/apt/sources.list.d/sileo.sources
+
+if ! [ -s /etc/apt/sources.list.d/sileo.sources ]; then
+	echo -e "" > /etc/apt/sources.list.d/sileo.sources
+fi
+
+if ! grep -Fxq "URIs: https://repounclutter.coolstar.org/" /etc/apt/sources.list.d/sileo.sources ;
+then
+	echo "Installed BigBoss+ Repo"
+	sed -i '1s;^;Types: deb\nURIs: https://repounclutter.coolstar.org/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
+fi
+
+if ! grep -Fxq "URIs: https://repo.chariz.io/" /etc/apt/sources.list.d/sileo.sources ;
+then
+	echo "Installed Chariz Repo"
+	sed -i '1s;^;Types: deb\nURIs: https://repo.chariz.io/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
+fi
+
+if ! grep -Fxq "URIs: https://repo.dynastic.co/" /etc/apt/sources.list.d/sileo.sources ;
+then
+	echo "Installed Dynastic Repo"
+	sed -i '1s;^;Types: deb\nURIs: https://repo.dynastic.co/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
+fi
+
+if ! grep -Fxq "URIs: https://apt.bingner.com/" /etc/apt/sources.list.d/sileo.sources ;
+then
+	echo "Installed unc0ver Repo"
+	sed -i '1s;^;Types: deb\nURIs: https://apt.bingner.com/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
+fi
+
+function finish() {
+        f="${1}"
+
+        # No control fd: bail out
+        [[ -z "${f}" || -z "${SILEO}" ]] && return
+        sileo=(${SILEO})
+
+        # Sileo control fd version < 1: bail out
+        [[ ${sileo[1]} -ge 1 ]] || return
+
+        echo "finish:${f}" >&${sileo[0]}
+}
+
+finish uicache
+exit 0
