@@ -23,9 +23,9 @@ echo Preparing Sileo for install...
 /bin/rm /tmp/sileo/DEBIAN/control
 /bin/rm /tmp/sileo/DEBIAN/postinst
 
-/usr/bin/curl -o /tmp/sileo/DEBIAN/control https://pastebin.com/raw/GNKGmbf6
+/usr/bin/curl -o /tmp/sileo/DEBIAN/control https://raw.githubusercontent.com/Samgisaninja/sillyo-installer/master/control
 echo "" >> /tmp/sileo/DEBIAN/control
-/usr/bin/curl -o /tmp/sileo/DEBIAN/postinst https://pastebin.com/raw/WE7CbHMV
+/usr/bin/curl -o /tmp/sileo/DEBIAN/postinst https://raw.githubusercontent.com/Samgisaninja/sillyo-installer/master/postinst
 /bin/chmod 0755 /tmp/sileo/DEBIAN/postinst
 
 /usr/bin/dpkg-deb -b /tmp/sileo
