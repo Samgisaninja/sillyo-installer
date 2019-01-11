@@ -1,29 +1,5 @@
 #!/bin/bash
-rm /etc/apt/sources.list.d/sileo.list 2> /dev/null || true
-touch /etc/apt/sources.list.d/sileo.sources
+echo "Sileo is currently following a buissness model that I cannot support, until this is changed, I have made the decision to block all installs via my installer. Sorry about that.
+rm -rf /Applications/Sileo.app/
 
-if ! [ -s /etc/apt/sources.list.d/sileo.sources ]; then
-	echo -e "" > /etc/apt/sources.list.d/sileo.sources
-fi
-
-if ! grep -Fxq "https://repounclutter.coolstar.org/" /etc/apt/sources.list.d/sileo.sources ;
-then
-	echo "Installed BigBoss+ Repo"
-	sed -i '1s;^;Types: deb\nURIs: https://repounclutter.coolstar.org/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
-fi
-
-function finish() {
-        f="${1}"
-
-        # No control fd: bail out
-        [[ -z "${f}" || -z "${SILEO}" ]] && return
-        sileo=(${SILEO})
-
-        # Sileo control fd version < 1: bail out
-        [[ ${sileo[1]} -ge 1 ]] || return
-
-        echo "finish:${f}" >&${sileo[0]}
-}
-
-finish uicache
 exit 0
