@@ -3,6 +3,8 @@
 /bin/rm -rf /tmp/sileo/
 /bin/rm -rf /tmp/org.coolstar.sileo_0.4b2_iphoneos-arm.deb
 /bin/rm -rf /tmp/sileo.deb
+/bin/rm -rf /tmp/install
+/bin/rm -rf /usr/bin/sillyo
 
 echo Downloading Sileo...
 
@@ -32,7 +34,9 @@ echo "" >> /tmp/sileo/DEBIAN/control
 
 echo Installing Sileo...
 
-/usr/bin/dpkg -i --force-all /tmp/sileo.deb
+/usr/bin/dpkg -i /tmp/sileo.deb
+
+uicache
 
 echo Cleaning up...
 
