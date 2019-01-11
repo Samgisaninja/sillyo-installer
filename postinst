@@ -6,7 +6,7 @@ if ! [ -s /etc/apt/sources.list.d/sileo.sources ]; then
 	echo -e "" > /etc/apt/sources.list.d/sileo.sources
 fi
 
-if ! grep -Fxq "https://repounclutter.coolstar.org/" /var/mobile/Library/Caches/com.saurik.Cydia/sources.list ;
+if ! grep -Fxq "https://repounclutter.coolstar.org/" /etc/apt/sources.list.d/sileo.sources ;
 then
 	echo "Installed BigBoss+ Repo"
 	sed -i '1s;^;Types: deb\nURIs: https://repounclutter.coolstar.org/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
