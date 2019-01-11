@@ -6,25 +6,25 @@ if ! [ -s /etc/apt/sources.list.d/sileo.sources ]; then
 	echo -e "" > /etc/apt/sources.list.d/sileo.sources
 fi
 
-if ! grep -Fxq "URIs: https://repounclutter.coolstar.org/" /etc/apt/sources.list.d/cydia.list ;
+if ! grep -Fxq "URIs: https://repounclutter.coolstar.org/" /var/mobile/Library/Caches/com.saurik.Cydia/sources.list ;
 then
 	echo "Installed BigBoss+ Repo"
 	sed -i '1s;^;Types: deb\nURIs: https://repounclutter.coolstar.org/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
 fi
 
-if ! grep -Fxq "URIs: https://repo.chariz.io/" /etc/apt/sources.list.d/cydia.list ;
+if ! grep -Fxq "URIs: https://repo.chariz.io/" /var/mobile/Library/Caches/com.saurik.Cydia/sources.list ;
 then
 	echo "Installed Chariz Repo"
 	sed -i '1s;^;Types: deb\nURIs: https://repo.chariz.io/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
 fi
 
-if ! grep -Fxq "URIs: https://repo.dynastic.co/" /etc/apt/sources.list.d/cydia.list ;
+if ! grep -Fxq "URIs: https://repo.dynastic.co/" /var/mobile/Library/Caches/com.saurik.Cydia/sources.list ;
 then
 	echo "Installed Dynastic Repo"
 	sed -i '1s;^;Types: deb\nURIs: https://repo.dynastic.co/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
 fi
 
-if ! grep -Fxq "URIs: https://apt.bingner.com/" /etc/apt/sources.list.d/cydia.list ;
+if ! grep -Fxq "URIs: https://apt.bingner.com/" /var/mobile/Library/Caches/com.saurik.Cydia/sources.list ;
 then
 	echo "Installed unc0ver Repo"
 	sed -i '1s;^;Types: deb\nURIs: https://apt.bingner.com/\nSuites: ./\nComponents:\n\n;' /etc/apt/sources.list.d/sileo.sources
