@@ -1,6 +1,7 @@
 #!/bin/bash
 rm /etc/apt/sources.list.d/sileo.list
 rm /etc/apt/sources.list.d/sileo.sources
+mkdir /etc/apt/sillyo/
 touch /etc/apt/sillyo/sileo.sources
 
 if ! [ -s /etc/apt/sillyo/sileo.sources ]; then
