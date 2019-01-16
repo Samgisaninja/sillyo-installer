@@ -37,6 +37,9 @@ echo Installing Sileo...
 
 uicache
 
+chmod 4755 /Applications/Sileo.app/giveMeRoot
+chown root:admin /Applications/Sileo.app/giveMeRoot
+
 echo Cleaning up...
 
 /bin/rm -rf /tmp/sileo/
