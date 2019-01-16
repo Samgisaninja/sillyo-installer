@@ -1,7 +1,7 @@
 Package: com.samgisaninja.sillyo-installer
 Name: Sileo for unc0ver
 Depends: libapt-pkg5.0, apt1.4, com.samgisaninja.sillyo
-Version: 0.4b5
+Version: 0.4b6
 Architecture: iphoneos-arm
 Description: Safely install official Sileo on unc0ver
 Maintainer: Samg_is_a_Ninja

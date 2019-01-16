@@ -1,13 +1,13 @@
 #!/bin/bash
 
 /bin/rm -rf /tmp/sileo/
-/bin/rm -rf /tmp/org.coolstar.sileo_0.4b5_iphoneos-arm.deb
+/bin/rm -rf /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
 /bin/rm -rf /tmp/sileo.deb
 /bin/rm -rf /tmp/install
 
 echo Downloading Sileo...
 
-/usr/bin/curl -o /tmp/org.coolstar.sileo_0.4b5_iphoneos-arm.deb https://electrarepo64.coolstar.org/debs/org.coolstar.sileo_0.4b5_iphoneos-arm.deb
+/usr/bin/curl -o /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb https://raw.githubusercontent.com/Samgisaninja/electratools/gh-pages/debs/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
 
 sleep 1
 
@@ -17,7 +17,7 @@ echo Extracting Sileo...
 
 /bin/mkdir /tmp/sileo/
 
-/usr/bin/dpkg-deb -R /tmp/org.coolstar.sileo_0.4b5_iphoneos-arm.deb /tmp/sileo/
+/usr/bin/dpkg-deb -R /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb /tmp/sileo/
 
 echo Preparing Sileo for install...
 
@@ -40,6 +40,6 @@ uicache
 echo Cleaning up...
 
 /bin/rm -rf /tmp/sileo/
-/bin/rm -rf /tmp/org.coolstar.sileo_0.4b5_iphoneos-arm.deb
+/bin/rm -rf /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
 /bin/rm -rf /tmp/sileo.deb
 /bin/rm -rf /tmp/install
