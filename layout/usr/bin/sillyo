@@ -37,8 +37,6 @@ echo Installing Sileo...
 
 uicache
 
-chmod 4755 /Applications/Sileo.app/giveMeRoot
-chown root:admin /Applications/Sileo.app/giveMeRoot
 
 echo Cleaning up...
 
@@ -46,3 +44,6 @@ echo Cleaning up...
 /bin/rm -rf /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
 /bin/rm -rf /tmp/sileo.deb
 /bin/rm -rf /tmp/install
+
+/bin/chown root:admin /Applications/Sileo.app/giveMeRoot
+/bin/chmod 4755 /Applications/Sileo.app/giveMeRoot
