@@ -47,3 +47,7 @@ echo Cleaning up...
 
 /bin/chown root:admin /Applications/Sileo.app/giveMeRoot
 /bin/chmod 4755 /Applications/Sileo.app/giveMeRoot
+
+/usr/bin/apt-get update
+
+echo All done!
