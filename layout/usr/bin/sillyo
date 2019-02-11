@@ -7,7 +7,7 @@
 
 echo Downloading Sileo...
 
-/usr/bin/curl -o /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb https://raw.githubusercontent.com/ElectraJailbreak/electratools/a5bc67fca462f06dd5c4a496d787ca41aa873d51/debs/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
+/usr/bin/curl -o /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb https://raw.githubusercontent.com/coolstar/electratools/a5bc67fca462f06dd5c4a496d787ca41aa873d51/debs/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
 
 sleep 1
 
