@@ -26,10 +26,11 @@ then
 	sed -i '1s;^;Types: deb\nURIs: https://repo.dynastic.co/\nSuites: ./\nComponents:\n\n;' /etc/apt/sillyo/sileo.sources
 fi
 
-if ! grep -Fxq "URIs: https://apt.bingner.com/" /etc/apt/sillyo/sileo.sources ;
+if ! grep -Fxq "URIs: https://apt.procurs.us/pool/main/iphoneos-arm64/1600/" /etc/apt/sillyo/sileo.sources ;
 then
-	echo "Installed unc0ver Repo"
-	sed -i '1s;^;Types: deb\nURIs: https://apt.bingner.com/\nSuites: ./\nComponents:\n\n;' /etc/apt/sillyo/sileo.sources
+	echo "Installed procursus repo..."
+	sed -i '1s;^;Types: deb\nURIs: https://apt.procurs.us/pool/main/iphoneos-arm64/1600/: ./\nComponents:\n\n;' /etc/apt/sillyo/sileo.sources
+	echo "if error then change procursus repo to https://apt.procurs.us/pool/main/iphoneos-arm64/1500/ or https://apt.procurs.us/pool/main/iphoneos-arm64/1700/
 fi
 
 function finish() {
