@@ -1,13 +1,16 @@
+echo made by cool5tar from binger fork...
+sleep 2
+
 #!/bin/bash
 
 /bin/rm -rf /tmp/sileo/
-/bin/rm -rf /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
+/bin/rm -rf /tmp/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb
 /bin/rm -rf /tmp/sileo.deb
 /bin/rm -rf /tmp/install
 
 echo Downloading Sileo...
 
-/usr/bin/curl -o /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb https://raw.githubusercontent.com/coolstar/electratools/a5bc67fca462f06dd5c4a496d787ca41aa873d51/debs/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
+/usr/bin/curl -o /tmp/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb https://repo.theodyssey.dev/debs/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb
 
 sleep 1
 
@@ -17,16 +20,16 @@ echo Extracting Sileo...
 
 /bin/mkdir /tmp/sileo/
 
-/usr/bin/dpkg-deb -R /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb /tmp/sileo/
+/usr/bin/dpkg-deb -R /tmp/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb /tmp/sileo/
 
 echo Preparing Sileo for install...
 
 /bin/rm /tmp/sileo/DEBIAN/control
 /bin/rm /tmp/sileo/DEBIAN/postinst
 
-/usr/bin/curl -o /tmp/sileo/DEBIAN/control https://raw.githubusercontent.com/Samgisaninja/sillyo-installer/master/control
+/usr/bin/curl -o /tmp/sileo/DEBIAN/control https://raw.githubusercontent.com/cool5tar/sillyo-installer/master/control
 echo "" >> /tmp/sileo/DEBIAN/control
-/usr/bin/curl -o /tmp/sileo/DEBIAN/postinst https://raw.githubusercontent.com/Samgisaninja/sillyo-installer/master/postinst
+/usr/bin/curl -o /tmp/sileo/DEBIAN/postinst https://raw.githubusercontent.com/cool5tar/sillyo-installer/master/postinst
 /bin/chmod 0755 /tmp/sileo/DEBIAN/postinst
 
 /usr/bin/dpkg-deb -b /tmp/sileo
@@ -41,7 +44,7 @@ uicache
 echo Cleaning up...
 
 /bin/rm -rf /tmp/sileo/
-/bin/rm -rf /tmp/org.coolstar.sileo_0.4b6_iphoneos-arm.deb
+/bin/rm -rf /tmp/org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb
 /bin/rm -rf /tmp/sileo.deb
 /bin/rm -rf /tmp/install
 
