@@ -1,0 +1,7 @@
+echo "creating myst..."
+sudo snaputil -c myst
+sleep 1
+sudo snaputil -r u0cursus
+echo "re-jailbreak with unc0ver after reboot and run in terminal uicache"
+sleep 3
+reboot

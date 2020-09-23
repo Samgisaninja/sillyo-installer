@@ -1,0 +1,6 @@
+echo "reversing..."
+sleep 1
+sudo snaputil -r myst
+echo "re-jailbreak with unc0ver after reboot and run in terminal uicache"
+sleep 3
+reboot
